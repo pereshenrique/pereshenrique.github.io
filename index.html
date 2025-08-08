@@ -1,0 +1,225 @@
+html_content = """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuidado para sua visão — Atendimento via WhatsApp</title>
+  <meta name="description" content="Receba recomendações personalizadas para melhorar a sua visão. Atendimento rápido e humanizado pelo WhatsApp." />
+  <meta property="og:title" content="Cuidado para sua visão — Atendimento via WhatsApp" />
+  <meta property="og:description" content="Recomendações personalizadas e atendimento humanizado pelo WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://seusiteexemplo.com/" />
+  <meta name="theme-color" content="#0A1A2F" />
+
+  <style>
+    :root {
+      --navy: #0A1A2F;     /* azul marinho escuro */
+      --navy-2: #0F2545;
+      --yellow: #F7C948;   /* amarelo */
+      --yellow-2: #E6B737;
+      --white: #ffffff;
+      --muted: #E6ECF5;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, "Noto Sans", "Liberation Sans", sans-serif; background: var(--navy); color: var(--white); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .grid { display: grid; gap: 32px; }
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: #111;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 8px 24px rgba(247, 201, 72, .25);
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); background: var(--yellow-2); box-shadow: 0 12px 28px rgba(247, 201, 72, .35); }
+    .btn:active { transform: translateY(0); }
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,.08);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+    header.nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: linear-gradient(180deg, rgba(10,26,47,.85) 0%, rgba(10,26,47,.65) 100%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; }
+    .brand-logo { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--yellow), #fff176); display: grid; place-items: center; color: #111; font-weight: 900; }
+    .hero {
+      padding: 72px 0 48px;
+      background:
+        radial-gradient(1000px 600px at 85% -10%, rgba(255, 229, 150, .06), transparent 60%),
+        radial-gradient(800px 500px at -10% 20%, rgba(255,255,255,.06), transparent 60%);
+    }
+    .hero-grid { grid-template-columns: 1.1fr 1fr; align-items: center; }
+    .eyebrow { color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; }
+    h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin: 12px 0 16px; }
+    .lead { font-size: clamp(16px, 2.5vw, 18px); color: #DFE7F3; max-width: 56ch; }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .checklist { display: grid; gap: 10px; margin: 18px 0 24px; }
+    .check { display: flex; align-items: flex-start; gap: 10px; }
+    .check i {
+      flex: 0 0 22px; height: 22px; border-radius: 6px; background: rgba(247, 201, 72, .15);
+      display: grid; place-items: center; color: var(--yellow);
+      border: 1px solid rgba(247,201,72,.35);
+      font-size: 14px; font-weight: 900;
+    }
+    .hero-cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+    .trusted { display: flex; gap: 18px; align-items: center; color: #B9C7DA; font-size: 14px; }
+    .trusted .dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,.28); }
+    .section { padding: 56px 0; }
+    .section-heading { font-size: clamp(24px, 3.5vw, 34px); margin: 0 0 16px; }
+    .cards { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 140px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.2);
+    }
+    .card h3 { margin: 6px 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: #D6E0EF; font-size: 15px; }
+    .faq { display: grid; gap: 12px; max-width: 900px; }
+    .faq-item { border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 16px 16px; background: rgba(255,255,255,.03); }
+    .faq-item h4 { margin: 0 0 8px; font-size: 16px; }
+    footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #BFD1EA;
+    }
+    .footer-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    .small { font-size: 12px; color: #C9D6EB; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { padding: 56px 0 36px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .trusted { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-logo">👁</div>
+        <div>Cuide da Sua Visão</div>
+      </div>
+      <div class="tag">Atendimento humanizado</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container grid hero-grid">
+        <div>
+          <div class="eyebrow">Indicação da Jane</div>
+          <h1>Sua visão merece foco.<br/>A gente te ajuda.</h1>
+          <p class="lead">Receba recomendações personalizadas para cuidado visual — como suporte à retina (luteína, zeaxantina) e alívio do cansaço ocular — direto no WhatsApp, com orientação profissional.</p>
+
+          <div class="hero-cta">
+            <a class="btn" id="cta-whatsapp" href="https://wa.me/555132286933?text=Oi%2C%20vim%20pela%20INFLUENCER_JANE%20e%20quero%20saber%20sobre%20produtos%20que%20melhoram%20a%20vis%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp agora</a>
+            <span class="tag">Resposta rápida • 09h–18h</span>
+          </div>
+
+          <div class="trusted" style="margin-top:18px;">
+            <span>+ de 1000 atendimentos realizados</span>
+            <span class="dot"></span>
+            <span>Satisfação elevada dos clientes</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="checklist">
+            <div class="check"><i>✓</i><div><strong>Alívio do cansaço visual</strong> para quem passa horas em telas.</div></div>
+            <div class="check"><i>✓</i><div><strong>Suporte nutricional à retina</strong> com ativos reconhecidos.</div></div>
+            <div class="check"><i>✓</i><div><strong>Indicação personalizada</strong> com acompanhamento profissional.</div></div>
+          </div>
+          <a class="btn" id="cta-whatsapp-2" href="https://wa.me/555132286933?text=Oi%2C%20vim%20pela%20INFLUENCER_JANE%20e%20quero%20saber%20sobre%20produtos%20que%20melhoram%20a%20vis%C3%A3o." target="_blank" rel="noopener" style="width:100%; text-align:center;">Quero minha recomendação</a>
+          <p class="small" style="margin-top:12px;">Ao clicar, você será direcionado ao WhatsApp com a mensagem “vim pela INFLUENCER_JANE” para facilitar o atendimento.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-heading">Por que falar com a nossa equipe</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Orientação confiável</h3>
+            <p>Atendimento feito por profissionais, com foco na sua necessidade individual.</p>
+          </div>
+          <div class="card">
+            <h3>Recomendações objetivas</h3>
+            <p>Indicamos somente o que faz sentido para o seu caso, sem enrolação.</p>
+          </div>
+          <div class="card">
+            <h3>Agilidade no retorno</h3>
+            <p>Você fala direto no WhatsApp e recebe a orientação rapidamente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2 class="section-heading">Perguntas frequentes</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <h4>Em quanto tempo recebo resposta?</h4>
+            <p>Normalmente entre 5 e 30 minutos no horário comercial (09h–18h). Fora desse horário, respondemos no próximo dia útil.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Quem vai me atender?</h4>
+            <p>Nossa equipe treinada para orientar sobre cuidado visual e indicar opções adequadas ao seu perfil.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Há contraindicações?</h4>
+            <p>Alguns produtos podem não ser indicados para todos os perfis. Por isso avaliamos seu caso e recomendamos a melhor alternativa. Sempre consulte um profissional de saúde.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="small">© <span id="year"></span> Ars Curandi. Todos os direitos reservados.</div>
+      <div class="small">Este site é informativo e não substitui orientação médica. Em caso de dúvidas, procure um profissional de saúde.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+"""
+file_path = "/mnt/data/landing_jane_visao.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
