@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestão de Conteúdo</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">G</div>
+        <div>Gestão</div>
+      </div>
+
+      <a class="nav-link" data-route="#/dashboard">📊 Visão Geral</a>
+      <a class="nav-link" data-route="#/workspace">🗂️ Clientes &amp; Quadros</a>
+      <a class="nav-link" data-route="#/team" id="team-nav-link" style="display:none;">👥 Equipe &amp; Permissões</a>
+
+      <div class="sidebar-footer">
+        <div class="user-chip" id="user-chip">
+          <div class="avatar" id="user-avatar">?</div>
+          <div id="user-name">Carregando…</div>
+        </div>
+        <button class="btn btn-ghost btn-sm btn-block" id="logout-btn" style="width:100%; margin-top:8px;">Sair</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <h1 id="page-title">Visão Geral</h1>
+      </div>
+      <div class="content" id="view-root">
+        <div class="empty-state">Carregando…</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
