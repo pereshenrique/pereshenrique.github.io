@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrar — Gestão de Conteúdo</title>
+  <link rel="stylesheet" href="./css/app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h1 id="form-title">Entrar</h1>
+      <p class="sub" id="form-sub">Acesse o painel de gestão de conteúdo e projetos.</p>
+
+      <div id="error-box" class="error-msg" style="display:none;"></div>
+
+      <form id="auth-form">
+        <div class="field" id="name-field" style="display:none;">
+          <label for="full_name">Nome completo</label>
+          <input type="text" id="full_name" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="password">Senha</label>
+          <input type="password" id="password" required autocomplete="current-password" minlength="6" />
+        </div>
+        <button type="submit" class="btn btn-block" id="submit-btn">Entrar</button>
+      </form>
+
+      <div class="auth-toggle">
+        <span id="toggle-text">Ainda não tem conta?</span>
+        <a id="toggle-link">Criar conta</a>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { signIn, signUp, getSession } from "./js/auth.js";
+
+    const session = await getSession();
+    if (session) window.location.href = "./app.html#/dashboard";
+
+    let mode = "login"; // ou "signup"
+    const form = document.getElementById("auth-form");
+    const errorBox = document.getElementById("error-box");
+    const nameField = document.getElementById("name-field");
+    const submitBtn = document.getElementById("submit-btn");
+    const toggleLink = document.getElementById("toggle-link");
+    const toggleText = document.getElementById("toggle-text");
+    const formTitle = document.getElementById("form-title");
+    const formSub = document.getElementById("form-sub");
+
+    function setMode(next) {
+      mode = next;
+      errorBox.style.display = "none";
+      if (mode === "login") {
+        nameField.style.display = "none";
+        submitBtn.textContent = "Entrar";
+        toggleText.textContent = "Ainda não tem conta?";
+        toggleLink.textContent = "Criar conta";
+        formTitle.textContent = "Entrar";
+        formSub.textContent = "Acesse o painel de gestão de conteúdo e projetos.";
+      } else {
+        nameField.style.display = "block";
+        submitBtn.textContent = "Criar conta";
+        toggleText.textContent = "Já tem conta?";
+        toggleLink.textContent = "Entrar";
+        formTitle.textContent = "Criar conta";
+        formSub.textContent = "Um administrador precisa liberar seu acesso aos clientes/quadros depois do cadastro.";
+      }
+    }
+
+    toggleLink.addEventListener("click", () => setMode(mode === "login" ? "signup" : "login"));
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorBox.style.display = "none";
+      submitBtn.disabled = true;
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      try {
+        if (mode === "login") {
+          await signIn(email, password);
+          window.location.href = "./app.html#/dashboard";
+        } else {
+          const fullName = document.getElementById("full_name").value.trim();
+          const { session } = await signUp(email, password, fullName);
+          if (session) {
+            window.location.href = "./app.html#/dashboard";
+          } else {
+            errorBox.style.display = "block";
+            errorBox.style.color = "#c8f0d9";
+            errorBox.textContent = "Conta criada! Verifique seu e-mail para confirmar o cadastro e depois faça login.";
+            setMode("login");
+          }
+        }
+      } catch (err) {
+        errorBox.style.display = "block";
+        errorBox.textContent = err.message || "Ocorreu um erro. Tente novamente.";
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
