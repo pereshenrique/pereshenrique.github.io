@@ -36,34 +36,6 @@ create trigger on_auth_user_created
 -- update public.profiles set role = 'admin' where email = 'seu-email@exemplo.com';
 
 -- ---------------------------------------------------------------------------
--- Funções auxiliares para políticas de acesso (RLS)
--- ---------------------------------------------------------------------------
-create function public.is_admin()
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select exists (
-    select 1 from public.profiles where id = auth.uid() and role = 'admin'
-  );
-$$;
-
-create function public.has_board_access(b_id uuid)
-returns boolean
-language sql
-stable
-security definer
-set search_path = public
-as $$
-  select public.is_admin() or exists (
-    select 1 from public.board_members
-    where board_id = b_id and user_id = auth.uid()
-  );
-$$;
-
--- ---------------------------------------------------------------------------
 -- CLIENTES
 -- ---------------------------------------------------------------------------
 create table public.clients (
@@ -143,6 +115,34 @@ $$;
 create trigger tasks_set_updated_at
   before update on public.tasks
   for each row execute procedure public.set_updated_at();
+
+-- ---------------------------------------------------------------------------
+-- Funções auxiliares para políticas de acesso (RLS)
+-- ---------------------------------------------------------------------------
+create function public.is_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1 from public.profiles where id = auth.uid() and role = 'admin'
+  );
+$$;
+
+create function public.has_board_access(b_id uuid)
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select public.is_admin() or exists (
+    select 1 from public.board_members
+    where board_id = b_id and user_id = auth.uid()
+  );
+$$;
 
 -- ---------------------------------------------------------------------------
 -- ROW LEVEL SECURITY
