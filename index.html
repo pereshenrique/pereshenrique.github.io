@@ -13,18 +13,24 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3B88'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23DEE2E5' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E" />
 
   <!--
-    PLACEHOLDER DE FONTES — a fonte oficial da marca é paga (August, da Ellen Luff Type
-    Foundry, para títulos; Dingos, da Antipixel, para o corpo). Até a Três enviar os arquivos
-    licenciados (.woff2/.otf), usamos substitutas gratuitas com espírito parecido: Oswald
-    (condensada, bold) no lugar de August e Plus Jakarta Sans no lugar de Dingos.
-    Quando os arquivos chegarem: hospedar em /assets/fonts, declarar via @font-face e trocar
-    os valores de --font-display / --font-body abaixo — nenhum outro CSS precisa mudar.
+    Fonte de título: August Bold (Ellen Luff Type Foundry), arquivo licenciado da agência,
+    hospedado localmente em /assets/fonts. Fonte de corpo: Montserrat (Google Fonts, livre) —
+    a Dingos original (Antipixel) é paga e não foi enviada, então Montserrat é a escolha
+    definitiva para o corpo do site.
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    @font-face {
+      font-family: 'August';
+      src: url('assets/fonts/August-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       /* Cores oficiais da marca (extraídas da paleta enviada) */
       --paper:     #DEE2E5;
@@ -38,9 +44,8 @@
       --line:      rgba(16, 16, 16, .14);
       --white:     #FDFDFC;
 
-      /* PLACEHOLDER — substituir por @font-face com August / Dingos quando chegarem */
-      --font-display: 'Oswald', Impact, 'Arial Narrow', sans-serif;
-      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'August', Impact, 'Arial Narrow', sans-serif;
+      --font-body: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
     }
 
