@@ -31,6 +31,12 @@
       "skillPath": "higgsfield-generate/SKILL.md",
       "computedHash": "020b94416184578d3218e9942b57537b61a9ca59ba10ed9b47f207205dd82141"
     },
+    "higgsfield-marketplace-cards": {
+      "source": "higgsfield-ai/skills",
+      "sourceType": "github",
+      "skillPath": "higgsfield-marketplace-cards/SKILL.md",
+      "computedHash": "7a08d374b9f962737fb8c8ff7f8e323fc4d2ab02281b6723c4631146b4892701"
+    },
     "higgsfield-product-photoshoot": {
       "source": "higgsfield-ai/skills",
       "sourceType": "github",
@@ -42,6 +48,12 @@
       "sourceType": "github",
       "skillPath": "higgsfield-soul-id/SKILL.md",
       "computedHash": "ff8418fe5fe936d65898601e28bb282c4c47c0fc0cd5c3e54e1c75565609683a"
+    },
+    "higgsfield-websites": {
+      "source": "higgsfield-ai/skills",
+      "sourceType": "github",
+      "skillPath": "higgsfield-websites/SKILL.md",
+      "computedHash": "c04c45d0f9290001acbf77fdb6e3d91b0d1543e3d094d07decf127885437823d"
     },
     "motion-graphics": {
       "source": "heygen-com/hyperframes",
