@@ -3,218 +3,457 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cuidado para sua visão — Atendimento via WhatsApp</title>
-  <meta name="description" content="Receba recomendações personalizadas para melhorar a sua visão. Atendimento rápido e humanizado pelo WhatsApp." />
-  <meta property="og:title" content="Cuidado para sua visão — Atendimento via WhatsApp" />
-  <meta property="og:description" content="Recomendações personalizadas e atendimento humanizado pelo WhatsApp." />
+  <title>Três Agência Digital — Marketing Digital e Gestão de Redes Sociais</title>
+  <meta name="description" content="Gestão de redes sociais, criação de peças gráficas, marketing digital, cliente oculto e análise de concorrência. Rede social não é curtida — é oportunidade de venda de verdade." />
+  <meta property="og:title" content="Três Agência Digital" />
+  <meta property="og:description" content="Rede social não é curtida. É oportunidade de venda de verdade." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://seusiteexemplo.com/" />
-  <meta name="theme-color" content="#0A1A2F" />
+  <meta property="og:image" content="assets/logo/tres-logo-lightbg.png" />
+  <meta name="theme-color" content="#DEE2E5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3B88'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23DEE2E5' text-anchor='middle'%3E3%3C/text%3E%3C/svg%3E" />
+
+  <!--
+    PLACEHOLDER DE FONTES — a fonte oficial da marca é paga (August, da Ellen Luff Type
+    Foundry, para títulos; Dingos, da Antipixel, para o corpo). Até a Três enviar os arquivos
+    licenciados (.woff2/.otf), usamos substitutas gratuitas com espírito parecido: Oswald
+    (condensada, bold) no lugar de August e Plus Jakarta Sans no lugar de Dingos.
+    Quando os arquivos chegarem: hospedar em /assets/fonts, declarar via @font-face e trocar
+    os valores de --font-display / --font-body abaixo — nenhum outro CSS precisa mudar.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #0A1A2F;     /* azul marinho escuro */
-      --navy-2: #0F2545;
-      --yellow: #F7C948;   /* amarelo */
-      --yellow-2: #E6B737;
-      --white: #ffffff;
-      --muted: #E6ECF5;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, "Noto Sans", "Liberation Sans", sans-serif; background: var(--navy); color: var(--white); }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
-    .grid { display: grid; gap: 32px; }
-    .btn {
-      display: inline-block;
-      background: var(--yellow);
-      color: #111;
-      padding: 16px 28px;
-      border-radius: 999px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-      box-shadow: 0 8px 24px rgba(247, 201, 72, .25);
-      text-align: center;
-    }
-    .btn:hover { transform: translateY(-1px); background: var(--yellow-2); box-shadow: 0 12px 28px rgba(247, 201, 72, .35); }
-    .btn:active { transform: translateY(0); }
-    .tag {
-      display: inline-block;
-      background: rgba(255,255,255,.08);
-      color: var(--muted);
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: .3px;
-    }
-    header.nav {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: saturate(180%) blur(10px);
-      background: linear-gradient(180deg, rgba(10,26,47,.85) 0%, rgba(10,26,47,.65) 100%);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; }
-    .brand-logo { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--yellow), #fff176); display: grid; place-items: center; color: #111; font-weight: 900; }
-    .hero {
-      padding: 72px 0 48px;
-      background:
-        radial-gradient(1000px 600px at 85% -10%, rgba(255, 229, 150, .06), transparent 60%),
-        radial-gradient(800px 500px at -10% 20%, rgba(255,255,255,.06), transparent 60%);
-    }
-    .hero-grid { grid-template-columns: 1.1fr 1fr; align-items: center; }
-    .eyebrow { color: var(--yellow); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 12px; }
-    h1 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin: 12px 0 16px; }
-    .lead { font-size: clamp(16px, 2.5vw, 18px); color: #DFE7F3; max-width: 56ch; }
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 8px 28px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
-    }
-    .checklist { display: grid; gap: 10px; margin: 18px 0 24px; }
-    .check { display: flex; align-items: flex-start; gap: 10px; }
-    .check i {
-      flex: 0 0 22px; height: 22px; border-radius: 6px; background: rgba(247, 201, 72, .15);
-      display: grid; place-items: center; color: var(--yellow);
-      border: 1px solid rgba(247,201,72,.35);
-      font-size: 14px; font-weight: 900;
-    }
-    .hero-cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
-    .trusted { display: flex; gap: 18px; align-items: center; color: #B9C7DA; font-size: 14px; }
-    .trusted .dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(255,255,255,.28); }
-    .section { padding: 56px 0; }
-    .section-heading { font-size: clamp(24px, 3.5vw, 34px); margin: 0 0 16px; }
-    .cards { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      padding: 18px;
-      min-height: 140px;
-      box-shadow: 0 6px 24px rgba(0,0,0,.2);
-    }
-    .card h3 { margin: 6px 0 8px; font-size: 18px; }
-    .card p { margin: 0; color: #D6E0EF; font-size: 15px; }
-    .faq { display: grid; gap: 12px; max-width: 900px; }
-    .faq-item { border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 16px 16px; background: rgba(255,255,255,.03); }
-    .faq-item h4 { margin: 0 0 8px; font-size: 16px; }
-    footer {
-      padding: 28px 0 40px;
-      border-top: 1px solid rgba(255,255,255,.08);
-      color: #BFD1EA;
-    }
-    .footer-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
-    .small { font-size: 12px; color: #C9D6EB; }
+      /* Cores oficiais da marca (extraídas da paleta enviada) */
+      --paper:     #DEE2E5;
+      --paper-2:   #D6DEEC; /* leve matiz azulada do off-white, para alternar seções */
+      --ink:       #101010;
+      --muted:     rgba(16, 16, 16, .58);
+      --blue:      #1F3B88;
+      --blue-dark: #142856;
+      --gold:      #A79C62;
+      --gold-dark: #8C8151;
+      --line:      rgba(16, 16, 16, .14);
+      --white:     #FDFDFC;
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero { padding: 56px 0 36px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: 1fr; }
-      .trusted { align-items: flex-start; }
+      /* PLACEHOLDER — substituir por @font-face com August / Dingos quando chegarem */
+      --font-display: 'Oswald', Impact, 'Arial Narrow', sans-serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
     }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: .01em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(222, 226, 229, .92);
+      backdrop-filter: saturate(160%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; position: relative; }
+    .wordmark { display: flex; align-items: baseline; gap: 8px; font-family: var(--font-display); font-size: 26px; line-height: 1; text-decoration: none; }
+    .wordmark b { color: var(--blue); font-weight: 700; }
+    .wordmark span { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--gold-dark); line-height: 1.3; }
+    nav.links { display: flex; gap: 28px; align-items: center; }
+    nav.links a {
+      text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink);
+      padding-bottom: 3px; border-bottom: 2px solid transparent;
+    }
+    nav.links a:hover { border-color: var(--blue); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: var(--white);
+      font-family: var(--font-body); font-weight: 600; font-size: 15px;
+      padding: 14px 24px; border-radius: 4px;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: transform .12s ease, box-shadow .2s ease;
+      box-shadow: 4px 4px 0 var(--blue-dark);
+    }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--blue-dark); }
+    .btn:active { transform: translate(0,0); box-shadow: 2px 2px 0 var(--blue-dark); }
+    .btn.ghost {
+      background: transparent; color: var(--ink); box-shadow: none;
+      border: 2px solid var(--ink);
+    }
+    .btn.ghost:hover { transform: none; background: var(--ink); color: var(--paper); box-shadow: none; }
+
+    .menu-toggle {
+      display: none;
+      background: none; border: 2px solid var(--ink); border-radius: 4px;
+      width: 42px; height: 38px; cursor: pointer; padding: 0;
+    }
+    .menu-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px auto; }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; padding: 88px 0 64px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+    .hero h1 {
+      font-size: clamp(44px, 6.4vw, 84px);
+      line-height: .98;
+      margin: 14px 0 22px;
+    }
+    .hero h1 .accent-line { color: var(--blue); display: block; }
+    .hero .lead {
+      font-size: clamp(17px, 2vw, 20px);
+      color: var(--ink);
+      max-width: 46ch;
+      margin: 0 0 32px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-meta {
+      margin-top: 44px; display: flex; gap: 32px; flex-wrap: wrap;
+      font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em;
+    }
+    .hero-meta strong { color: var(--ink); font-size: 14px; display: block; font-family: var(--font-body); font-weight: 600; letter-spacing: 0; text-transform: none; margin-top: 2px; }
+    .hero-mark { display: flex; justify-content: center; }
+    .hero-mark img {
+      width: 100%; max-width: 380px;
+      filter: drop-shadow(0 18px 34px rgba(16,16,16,.16));
+    }
+
+    /* ---------- Section shell ---------- */
+    section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
+    .section-head h2 { font-size: clamp(32px, 5vw, 52px); }
+    .section-head p { font-family: var(--font-body); color: var(--muted); max-width: 40ch; margin: 10px 0 0; font-size: 15px; }
+
+    /* ---------- História ---------- */
+    #historia { background: var(--paper-2); }
+    .historia-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start; }
+    .historia-grid p { margin: 0 0 20px; font-size: 17px; }
+    .historia-grid p:last-child { margin-bottom: 0; }
+
+    .timeline { border-left: 2px solid rgba(31,59,136,.22); padding-left: 28px; display: grid; gap: 30px; }
+    .timeline-item { position: relative; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -33px; top: 4px;
+      width: 10px; height: 10px; border-radius: 50%; background: var(--gold);
+      box-shadow: 0 0 0 3px var(--paper-2);
+    }
+    .timeline-item time { display: block; font-family: var(--font-mono); font-size: 13px; color: var(--blue); font-weight: 600; letter-spacing: .04em; }
+    .timeline-item p { margin: 4px 0 0; font-size: 15px; color: var(--ink); }
+
+    /* ---------- Serviços ---------- */
+    .service-list { border-top: 1px solid var(--line); }
+    .service-row {
+      display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px;
+      padding: 30px 12px; border-bottom: 1px solid var(--line);
+      border-left: 4px solid transparent;
+      align-items: baseline;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .service-row:hover { border-left-color: var(--gold); background: rgba(167,156,98,.08); }
+    .service-row h3 { font-size: clamp(22px, 3vw, 30px); }
+    .service-row p { margin: 0; color: var(--muted); font-size: 15.5px; max-width: 52ch; }
+
+    /* ---------- Portfólio ---------- */
+    #portfolio { background: var(--blue); color: var(--paper); }
+    #portfolio .eyebrow, #portfolio .section-head p { color: rgba(222,226,229,.62); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(222,226,229,.18); }
+    .portfolio-card {
+      background: var(--blue); padding: 26px 22px; min-height: 140px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      text-decoration: none; color: inherit;
+      transition: background .15s ease;
+    }
+    .portfolio-card:hover { background: #274798; }
+    .portfolio-card svg { width: 20px; height: 20px; opacity: .75; color: var(--gold); }
+    .portfolio-card .name { font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: .01em; line-height: 1.1; margin-top: 18px; text-transform: uppercase; }
+    .portfolio-card .handle { font-family: var(--font-mono); font-size: 12px; color: rgba(222,226,229,.55); margin-top: 6px; }
+
+    /* ---------- Contato ---------- */
+    .contato-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .contato-grid h2 { font-size: clamp(36px, 6vw, 64px); margin-bottom: 18px; }
+    .contato-grid .lead { font-size: 18px; color: var(--muted); max-width: 44ch; margin-bottom: 32px; }
+    .contact-card {
+      position: relative; overflow: hidden;
+      background: var(--ink); color: var(--paper);
+      border-radius: 6px; padding: 34px;
+      display: grid; gap: 22px;
+    }
+    .contact-card img.mark {
+      position: absolute; right: -46px; bottom: -46px;
+      width: 200px; opacity: .9; pointer-events: none;
+    }
+    .contact-row { position: relative; z-index: 1; display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--paper); }
+    .contact-row svg { width: 22px; height: 22px; color: var(--gold); flex-shrink: 0; }
+    .contact-row .label { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: rgba(222,226,229,.55); display: block; }
+    .contact-row .value { font-size: 16px; font-weight: 500; }
+
+    /* ---------- Footer ---------- */
+    footer { padding: 32px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-inner .small { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      nav.links { display: none; }
+      .menu-toggle { display: block; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-mark { order: -1; margin-bottom: 8px; }
+      .hero-mark img { max-width: 220px; }
+      .historia-grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-row { grid-template-columns: 1fr; gap: 8px; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .contato-grid { grid-template-columns: 1fr; }
+    }
+
+    nav.links.open {
+      display: flex; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--paper); flex-direction: column; gap: 0;
+      border-bottom: 1px solid var(--line);
+      padding: 8px 24px 20px;
+    }
+    nav.links.open a { padding: 12px 0; width: 100%; border-bottom: 1px solid var(--line); }
   </style>
 </head>
 <body>
+
   <header class="nav">
     <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-logo">👁</div>
-        <div>Cuide da Sua Visão</div>
-      </div>
-      <div class="tag">Atendimento humanizado</div>
+      <a href="#top" class="wordmark" aria-label="Três Agência Digital">
+        <b>TRÊS</b><span>Agência<br/>Digital</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="links" id="navLinks">
+        <a href="#historia">História</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+        <a class="btn" href="https://wa.me/5551991283664?text=Ola!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20servicos%20da%20Tres%20Agencia%20Digital." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <div class="container grid hero-grid">
+      <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Indicação da Jane</div>
-          <h1>Sua visão merece foco.<br/>A gente te ajuda.</h1>
-          <p class="lead">Receba recomendações personalizadas para cuidado visual — como suporte à retina (luteína, zeaxantina) e alívio do cansaço ocular — direto no WhatsApp, com orientação profissional.</p>
-
-          <div class="hero-cta">
-            <a class="btn" id="cta-whatsapp" href="https://wa.me/555132286933?text=Oi%2C%20vim%20pela%20INFLUENCER_JANE%20e%20quero%20saber%20sobre%20produtos%20que%20melhoram%20a%20vis%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp agora</a>
-            <span class="tag">Resposta rápida • 09h–18h</span>
+          <span class="eyebrow">Três Agência Digital · desde 2022</span>
+          <h1>
+            Rede social
+            <span class="accent-line">não é curtida.</span>
+          </h1>
+          <p class="lead">É oportunidade de venda de verdade. A gente cuida da presença digital do seu negócio pra gerar resultado — não só engajamento bonito no relatório.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/5551991283664?text=Ola!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20servicos%20da%20Tres%20Agencia%20Digital." target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+            <a class="btn ghost" href="#portfolio">Ver quem já caminhou com a gente</a>
           </div>
-
-          <div class="trusted" style="margin-top:18px;">
-            <span>+ de 1000 atendimentos realizados</span>
-            <span class="dot"></span>
-            <span>Satisfação elevada dos clientes</span>
+          <div class="hero-meta">
+            <div>Clientes simultâneos em 2025<strong>7 negócios</strong></div>
+            <div>Nichos atendidos<strong>Advocacia, saúde, beleza, arquitetura, turismo, esporte</strong></div>
           </div>
         </div>
-
-        <div class="hero-card">
-          <div class="checklist">
-            <div class="check"><i>✓</i><div><strong>Alívio do cansaço visual</strong> para quem passa horas em telas.</div></div>
-            <div class="check"><i>✓</i><div><strong>Suporte nutricional à retina</strong> com ativos reconhecidos.</div></div>
-            <div class="check"><i>✓</i><div><strong>Indicação personalizada</strong> com acompanhamento profissional.</div></div>
-          </div>
-          <a class="btn" id="cta-whatsapp-2" href="https://wa.me/555132286933?text=Oi%2C%20vim%20pela%20INFLUENCER_JANE%20e%20quero%20saber%20sobre%20produtos%20que%20melhoram%20a%20vis%C3%A3o." target="_blank" rel="noopener" style="width:100%; text-align:center;">Quero minha recomendação</a>
-          <p class="small" style="margin-top:12px;">Ao clicar, você será direcionado ao WhatsApp com a mensagem “vim pela INFLUENCER_JANE” para facilitar o atendimento.</p>
+        <div class="hero-mark">
+          <img src="assets/logo/tres-logo-lightbg.png" alt="Três Agência Digital" width="800" height="800" />
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2 class="section-heading">Por que falar com a nossa equipe</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Orientação confiável</h3>
-            <p>Atendimento feito por profissionais, com foco na sua necessidade individual.</p>
+    <section id="historia">
+      <div class="container historia-grid">
+        <div>
+          <span class="eyebrow">História</span>
+          <h2 style="margin: 10px 0 28px;">Como a Três começou</h2>
+          <p>A Três começou em 2022, mas foi em 2023 que ganhou forma de verdade. Na época, eu não tinha um portfólio grande — tinha só uma convicção: rede social não é curtida, é oportunidade de venda de verdade.</p>
+          <p>De lá pra cá, tive a sorte de caminhar ao lado de negócios muito diferentes entre si: escritórios de advocacia, farmácia, marcas de beleza, arquitetos, empresas de viagem, eventos esportivos. Em determinado momento de 2025, cheguei a atender 7 clientes ao mesmo tempo — foi aí que percebi que, pra continuar entregando o mesmo nível de cuidado em cada projeto, eu precisava de mais gente comigo.</p>
+          <p>Hoje, consolidada no mercado, a Três busca atender diversos nichos com excelência, sempre de acordo com o que o cliente espera.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <time>2022</time>
+            <p>Nasce a Três, ainda sem portfólio — só com uma convicção.</p>
           </div>
-          <div class="card">
-            <h3>Recomendações objetivas</h3>
-            <p>Indicamos somente o que faz sentido para o seu caso, sem enrolação.</p>
+          <div class="timeline-item">
+            <time>2023</time>
+            <p>A agência ganha forma de verdade.</p>
           </div>
-          <div class="card">
-            <h3>Agilidade no retorno</h3>
-            <p>Você fala direto no WhatsApp e recebe a orientação rapidamente.</p>
+          <div class="timeline-item">
+            <time>2025</time>
+            <p>7 clientes ao mesmo tempo. Fica claro: hora de montar um time.</p>
+          </div>
+          <div class="timeline-item">
+            <time>Hoje</time>
+            <p>Consolidada, atendendo diversos nichos com o mesmo cuidado do início.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section id="servicos">
       <div class="container">
-        <h2 class="section-heading">Perguntas frequentes</h2>
-        <div class="faq">
-          <div class="faq-item">
-            <h4>Em quanto tempo recebo resposta?</h4>
-            <p>Normalmente entre 5 e 30 minutos no horário comercial (09h–18h). Fora desse horário, respondemos no próximo dia útil.</p>
+        <div class="section-head">
+          <h2>Serviços</h2>
+          <p>Do plano de conteúdo ao relatório de concorrência — o que fizer sentido pro momento do seu negócio.</p>
+        </div>
+        <div class="service-list">
+          <div class="service-row">
+            <h3>Gestão de redes sociais</h3>
+            <p>Planejamento, criação e publicação de conteúdo com estratégia por trás de cada post — não só estética.</p>
           </div>
-          <div class="faq-item">
-            <h4>Quem vai me atender?</h4>
-            <p>Nossa equipe treinada para orientar sobre cuidado visual e indicar opções adequadas ao seu perfil.</p>
+          <div class="service-row">
+            <h3>Criação de peças gráficas</h3>
+            <p>Materiais gráficos para redes, impressos e campanhas, com identidade aplicada de verdade.</p>
           </div>
-          <div class="faq-item">
-            <h4>Há contraindicações?</h4>
-            <p>Alguns produtos podem não ser indicados para todos os perfis. Por isso avaliamos seu caso e recomendamos a melhor alternativa. Sempre consulte um profissional de saúde.</p>
+          <div class="service-row">
+            <h3>Marketing digital</h3>
+            <p>Estratégia digital pensada pro seu momento de negócio, do posicionamento à conversão.</p>
           </div>
+          <div class="service-row">
+            <h3>Consultoria de redes sociais</h3>
+            <p>Diagnóstico e direcionamento pra quem já tem time interno e quer assumir a gestão com mais segurança.</p>
+          </div>
+          <div class="service-row">
+            <h3>Calendário de publicações</h3>
+            <p>Planejamento de conteúdo sob medida, sem pacote fechado de gestão completa.</p>
+          </div>
+          <div class="service-row">
+            <h3>Cliente oculto</h3>
+            <p>Avaliação real do atendimento da sua empresa, com relatório de pontos de melhoria.</p>
+          </div>
+          <div class="service-row">
+            <h3>Análise de concorrência</h3>
+            <p>Relatório completo sobre o que a concorrência está fazendo — e como você pode se posicionar melhor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Portfólio</h2>
+          <p>Negócios diferentes entre si, cuidados com o mesmo padrão.</p>
+        </div>
+      </div>
+      <div class="container" style="padding: 0;">
+        <div class="portfolio-grid">
+          <a class="portfolio-card" href="https://instagram.com/arscurandi" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Ars Curandi</div><div class="handle">@arscurandi</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/sub4turismo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Sub4 Turismo</div><div class="handle">@sub4turismo</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/priscilamauat" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Priscila Mauat</div><div class="handle">@priscilamauat</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/acbsul_compressores" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">ACB Sul Compressores</div><div class="handle">@acbsul_compressores</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/portanovaadvogados" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Porta Nova Advogados</div><div class="handle">@portanovaadvogados</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/laura.siqueira.corretora" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Laura Siqueira Corretora</div><div class="handle">@laura.siqueira.corretora</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/galgosrun" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Galgos Run</div><div class="handle">@galgosrun</div></div>
+          </a>
+          <a class="portfolio-card" href="https://instagram.com/sobre.controller" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            <div><div class="name">Sobre Controller</div><div class="handle">@sobre.controller</div></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="border-bottom: none;">
+      <div class="container contato-grid">
+        <div>
+          <span class="eyebrow">Contato</span>
+          <h2>Bora conversar?</h2>
+          <p class="lead">Me conta o que você precisa vender mais, e eu te digo como a gente pode ajudar.</p>
+          <a class="btn" href="https://wa.me/5551991283664?text=Ola!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20os%20servicos%20da%20Tres%20Agencia%20Digital." target="_blank" rel="noopener">
+            Falar no WhatsApp
+          </a>
+        </div>
+        <div class="contact-card">
+          <img class="mark" src="assets/logo/tres-logo-darkbg.png" alt="" aria-hidden="true" />
+          <a class="contact-row" href="https://wa.me/5551991283664" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67a8.2 8.2 0 0 1 5.83 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.25-8.25m-4.53 4.7c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.09.47-.07 1.43-.58 1.63-1.15.2-.56.2-1.04.14-1.15-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.55.12-.16.24-.63.78-.77.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42h-.47Z"/></svg>
+            <div><span class="label">WhatsApp</span><span class="value">(51) 99128-3664</span></div>
+          </a>
+          <a class="contact-row" href="mailto:tres.ag.portoalegre@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <div><span class="label">E-mail</span><span class="value">tres.ag.portoalegre@gmail.com</span></div>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div class="small">© <span id="year"></span> Ars Curandi. Todos os direitos reservados.</div>
-      <div class="small">Este site é informativo e não substitui orientação médica. Em caso de dúvidas, procure um profissional de saúde.</div>
+    <div class="container footer-inner">
+      <a href="#top" class="wordmark" aria-label="Três Agência Digital">
+        <b>TRÊS</b><span>Agência<br/>Digital</span>
+      </a>
+      <span class="small">© <span id="year"></span> Três Agência Digital. Todos os direitos reservados.</span>
     </div>
   </footer>
 
   <script>
-    // Atualiza ano no rodapé
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    var toggle = document.getElementById('menuToggle');
+    var links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
   </script>
 </body>
 </html>
-
