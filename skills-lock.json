@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "ad-creative": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/ad-creative/SKILL.md",
+      "computedHash": "e17348c142aa04bdc4a7d5fb2599bdb2856170d3e343d19dfb0468fdab1fa124"
+    },
     "content-strategy": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
