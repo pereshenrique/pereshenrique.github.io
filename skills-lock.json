@@ -31,6 +31,12 @@
       "skillPath": "higgsfield-generate/SKILL.md",
       "computedHash": "020b94416184578d3218e9942b57537b61a9ca59ba10ed9b47f207205dd82141"
     },
+    "higgsfield-product-photoshoot": {
+      "source": "higgsfield-ai/skills",
+      "sourceType": "github",
+      "skillPath": "higgsfield-product-photoshoot/SKILL.md",
+      "computedHash": "11ed02298e09d067f96b7347d34e1dea8abb3ca058f714ac3cf70602176a4263"
+    },
     "motion-graphics": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",
