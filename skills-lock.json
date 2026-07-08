@@ -30,6 +30,12 @@
       "sourceType": "github",
       "skillPath": "skills/motion-graphics/SKILL.md",
       "computedHash": "ea2aaab218c5d0022150d7034bc3d6b4447b3634f4a7b460bfa7817c8abf793e"
+    },
+    "social": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/social/SKILL.md",
+      "computedHash": "8c8e87a941d4cb53827e929ee457d9710bb81c5fb1ac80f19cd2aa034aeaa40d"
     }
   }
 }
